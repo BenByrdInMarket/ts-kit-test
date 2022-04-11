@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { StyledEngineProvider, ThemeProvider, inMarketTheme } from '@inmarket/inmarkit/dist/src';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={inMarketTheme}>
+        <App />
+      </ThemeProvider>
+    </StyledEngineProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
